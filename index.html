@@ -497,14 +497,14 @@
     <script>
         // Sample product data
         const products = [
-            { id: 1, name: 'Refreshing Sobolo Drink', category: 'Beverages', price: 12.99, rating: 4.8, badge: 'New', image: 'images/sobolo.jpg' },
+            { id: 1, name: 'Refreshing Sobolo Drink', category: 'Beverages', price: 3, rating: 4.8, badge: 'New', image: 'images/sobolo.jpg' },
             { id: 2, name: 'Premium Ice Cream', category: 'Desserts', price: 8.99, rating: 4.7, badge: 'Hot', image: 'images/icecream.jpg' },
             { id: 3, name: 'Spring Rose Bouquet', category: 'Flowers', price: 24.99, rating: 4.9, badge: 'Sale', image: 'images/spring-rose.jpg' },
-            { id: 4, name: 'Sobolo Special Edition', category: 'Beverages', price: 15.99, rating: 4.6, badge: '', image: 'images/sobolo.jpg' },
-            { id: 5, name: 'Deluxe Ice Cream', category: 'Desserts', price: 10.99, rating: 4.7, badge: 'New', image: 'images/icecream.jpg' },
-            { id: 6, name: 'Rose Garden Collection', category: 'Flowers', price: 29.99, rating: 4.8, badge: 'Sale', image: 'images/spring-rose.jpg' },
-            { id: 7, name: 'Classic Sobolo', category: 'Beverages', price: 9.99, rating: 4.5, badge: '', image: 'images/sobolo.jpg' },
-            { id: 8, name: 'Artisan Ice Cream', category: 'Desserts', price: 11.99, rating: 4.6, badge: 'Hot', image: 'images/icecream.jpg' }
+            { id: 4, name: 'Sobolo Special Edition', category: 'Beverages', price:3, rating: 4.6, badge: '', image: 'images/sobolo.jpg' },
+            { id: 5, name: 'Deluxe Ice Cream', category: 'Desserts', price: 6, rating: 4.7, badge: 'New', image: 'images/icecream.jpg' },
+            { id: 6, name: 'Rose Garden Collection', category: 'Flowers', price: 2, rating: 4.8, badge: 'Sale', image: 'images/spring-rose.jpg' },
+            { id: 7, name: 'Classic Sobolo', category: 'Beverages', price: 3, rating: 4.5, badge: '', image: 'images/sobolo.jpg' },
+            { id: 8, name: 'Artisan Ice Cream', category: 'Desserts', price: 6, rating: 4.6, badge: 'Hot', image: 'images/icecream.jpg' }
         ];
 
         // Render products
@@ -525,7 +525,7 @@
                                 <span style="color: #6b7280; font-size: 0.9rem;">(${product.rating})</span>
                             </div>
                             <div class="product-price">
-                                <span class="price">${product.price}</span>
+                                <span class="price">GHS{product.price}</span>
                                 <button class="btn-add-cart" onclick="addToCart(${product.id})">
                                     <i class="fas fa-cart-plus"></i>
                                 </button>
