@@ -175,14 +175,23 @@
         .product-image {
             width: 100%;
             height: 250px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #f3f4f6;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 4rem;
-            color: white;
             position: relative;
             overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.1);
         }
 
         .product-badge {
@@ -488,14 +497,14 @@
     <script>
         // Sample product data
         const products = [
-            { id: 1, name: 'Wireless Headphones', category: 'Electronics', price: 79.99, rating: 4.5, badge: 'New', icon: '🎧' },
-            { id: 2, name: 'Smart Watch Pro', category: 'Electronics', price: 299.99, rating: 4.8, badge: 'Hot', icon: '⌚' },
-            { id: 3, name: 'Designer Backpack', category: 'Fashion', price: 59.99, rating: 4.3, badge: 'Sale', icon: '🎒' },
-            { id: 4, name: 'Coffee Maker', category: 'Home', price: 89.99, rating: 4.6, badge: '', icon: '☕' },
-            { id: 5, name: 'Running Shoes', category: 'Sports', price: 129.99, rating: 4.7, badge: 'New', icon: '👟' },
-            { id: 6, name: 'Bluetooth Speaker', category: 'Electronics', price: 49.99, rating: 4.4, badge: 'Sale', icon: '🔊' },
-            { id: 7, name: 'Yoga Mat', category: 'Sports', price: 34.99, rating: 4.5, badge: '', icon: '🧘' },
-            { id: 8, name: 'Desk Lamp', category: 'Home', price: 44.99, rating: 4.2, badge: 'Hot', icon: '💡' }
+            { id: 1, name: 'Refreshing Sobolo Drink', category: 'Beverages', price: 12.99, rating: 4.8, badge: 'New', image: 'images/sobolo.jpg' },
+            { id: 2, name: 'Premium Ice Cream', category: 'Desserts', price: 8.99, rating: 4.7, badge: 'Hot', image: 'images/icecream.jpg' },
+            { id: 3, name: 'Spring Rose Bouquet', category: 'Flowers', price: 24.99, rating: 4.9, badge: 'Sale', image: 'images/spring-rose.jpg' },
+            { id: 4, name: 'Sobolo Special Edition', category: 'Beverages', price: 15.99, rating: 4.6, badge: '', image: 'images/sobolo.jpg' },
+            { id: 5, name: 'Deluxe Ice Cream', category: 'Desserts', price: 10.99, rating: 4.7, badge: 'New', image: 'images/icecream.jpg' },
+            { id: 6, name: 'Rose Garden Collection', category: 'Flowers', price: 29.99, rating: 4.8, badge: 'Sale', image: 'images/spring-rose.jpg' },
+            { id: 7, name: 'Classic Sobolo', category: 'Beverages', price: 9.99, rating: 4.5, badge: '', image: 'images/sobolo.jpg' },
+            { id: 8, name: 'Artisan Ice Cream', category: 'Desserts', price: 11.99, rating: 4.6, badge: 'Hot', image: 'images/icecream.jpg' }
         ];
 
         // Render products
@@ -506,7 +515,7 @@
                     <div class="product-card">
                         <div class="product-image">
                             ${product.badge ? `<span class="product-badge">${product.badge}</span>` : ''}
-                            <span>${product.icon}</span>
+                            <img src="${product.image}" alt="${product.name}">
                         </div>
                         <div class="product-info">
                             <div class="product-category">${product.category}</div>
@@ -516,7 +525,7 @@
                                 <span style="color: #6b7280; font-size: 0.9rem;">(${product.rating})</span>
                             </div>
                             <div class="product-price">
-                                <span class="price">$${product.price}</span>
+                                <span class="price">${product.price}</span>
                                 <button class="btn-add-cart" onclick="addToCart(${product.id})">
                                     <i class="fas fa-cart-plus"></i>
                                 </button>
